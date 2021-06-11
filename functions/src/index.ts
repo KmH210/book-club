@@ -1,4 +1,7 @@
-import * as functions from "firebase-functions";
+export { default as posts } from './routes/postsroutes';
+export { default as competition } from './routes/competitionroutes';
+export { default as member } from './routes/memberroutes';
+
 
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
