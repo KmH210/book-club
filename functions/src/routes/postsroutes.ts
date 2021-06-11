@@ -25,6 +25,17 @@ app.get("/", async (req, res) => {
     }
   });
 
-
+  app.post( "/", async ( req, res ) => {
+    const post = req.body as LogPost;
+    try {
+        const client = await getClient();
+        const result = await client.db().collection<LogPost>( 'posts' ).insertOne( post );
+        post._id = result.insertedId;
+        res.status( 201 ).json( post );
+    } catch ( err ) {
+        console.error( "FAIL", err );
+        res.status( 500 ).json( { message: "Internal Server Error" } );
+    }
+} );
 
 export default functions.https.onRequest(app);
