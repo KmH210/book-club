@@ -1,5 +1,4 @@
 import { ObjectId } from 'mongodb';
-import { Member } from './Member'
 
 export interface Competition {
     _id?: ObjectId;
@@ -11,7 +10,7 @@ export interface Competition {
 }
 
 export interface MemberLog {
-    member: Member;
+    memberName: string;
     pagesRead: number;
     booksFinished: number;
 }

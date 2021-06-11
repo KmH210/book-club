@@ -1,6 +1,6 @@
 export { default as posts } from './routes/postsroutes';
-export { default as competition } from './routes/competitionroutes';
-export { default as member } from './routes/memberroutes';
+// export { default as competition } from './routes/competitionroutes';
+// export { default as member } from './routes/memberroutes';
 
 
 // // Start writing Firebase Functions

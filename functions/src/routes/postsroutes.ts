@@ -1,10 +1,8 @@
 import * as functions from "firebase-functions";
 import express from 'express';
 import cors from 'cors';
-// import {getClient} from '../db';
-
-
-
+import { getClient } from '../db';
+import { LogPost } from "../model/Post";
 
 // creates an Express application - allows us to create and and use APIs
 const app = express();
@@ -14,6 +12,18 @@ app.use(cors());
 
 // Allow JSON request bodies for PUT and POST
 app.use(express.json());
+
+
+app.get("/", async (req, res) => {
+    try {
+      const client = await getClient();
+      const results = await client.db().collection<LogPost>('posts').find().toArray();
+      res.json(results); // send JSON results
+    } catch (err) {
+      console.error("FAIL", err);
+      res.status(500).json({message: "Internal Server Error"});
+    }
+  });
 
 
 
