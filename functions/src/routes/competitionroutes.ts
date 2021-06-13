@@ -6,14 +6,14 @@ import { Competition, MemberLog } from "../model/Competition";
 
 // creates an Express application - allows us to create and and use APIs
 const app = express();
-
 // Enable CORS so that this can be used from web-apps on other domains.
 app.use(cors());
-
 // Allow JSON request bodies for PUT and POST
 app.use(express.json());
 
 
+
+//This gets all current competition data. We may want to limit it to the name & dates, or that info combined with leaders (mostPages & mostBooksFInished below), depending on what we want to display on the main feed.
 app.get("/", async (req, res) => {
     try {
       const client = await getClient();
@@ -25,7 +25,7 @@ app.get("/", async (req, res) => {
     }
   });
 
-
+//logs a new MemberLog to the current competition
 app.put("/", async (req, res) => {
     const newLogToCompetition:MemberLog = req.body
     try {
@@ -97,6 +97,7 @@ app.get("/mostBooksFinished", async (req, res) => {
     }
   });
 
+//This is has both stats for each person, and is sorted by pages. We may want to change that or add another query to sort by books. 
 app.get("/currentStats", async (req, res) => {
     
     try {
@@ -128,22 +129,21 @@ app.get("/currentStats", async (req, res) => {
     }
   });
 
+  //CREATE new competition
+  app.post( "/", async ( req, res ) => {
+    const newComp = req.body as Competition;
+    try {
+        const client = await getClient();
+        const result = await client.db().collection<Competition>( 'competitions' ).insertOne( newComp );
+        newComp._id = result.insertedId;
+        res.status( 201 ).json( newComp );
+    } catch ( err ) {
+        console.error( "FAIL", err );
+        res.status( 500 ).json( { message: "Internal Server Error" } );
+    }
+} );
+
  
 
-
-
-//   app.put( "/:member", async ( req, res ) => {
-//     const post = req.body as MemberLog;
-//     const updateMember = req.params;
-//     try {
-//         const client = await getClient();
-//         const result = await client.db().collection<Comp>( 'posts' ).insertOne( post );
-//         post._id = result.insertedId;
-//         res.status( 201 ).json( post );
-//     } catch ( err ) {
-//         console.error( "FAIL", err );
-//         res.status( 500 ).json( { message: "Internal Server Error" } );
-//     }
-// } );
 
 export default functions.https.onRequest(app);
