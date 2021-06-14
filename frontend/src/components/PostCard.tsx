@@ -1,5 +1,5 @@
-import { useState } from "react";
-import Book from "../model/book";
+// import { useState } from "react";
+// import Book from "../model/book";
 import { LogPost } from "../model/LogPost";
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
 }
 
 function PostCard({ post}: Props) {
-    const [books, setBooks] = useState<Book[]>();
+    // const [books, setBooks] = useState<Book[]>();
 
     return(
         <div className="PostCard">

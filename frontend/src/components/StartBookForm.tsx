@@ -1,15 +1,13 @@
-import React, { FormEvent, useContext, useEffect, useState } from "react";
+import React, { FormEvent, useState } from "react";
 import Book from "../model/book";
-import { LogPost } from "../model/LogPost";
-import PostCard from "./PostCard";
-import { readAllPosts } from "../service/BookClubApiService";
-import { isMemberName } from "typescript";
-import { AuthContext } from "../context/auth-context";
+// import { LogPost } from "../model/LogPost";
+// import PostCard from "./PostCard";
+// import { readAllPosts } from "../service/BookClubApiService";
+// import { isMemberName } from "typescript";
 import { getABook } from "../service/OpenLibraryApiService";
 
 
 function StartBookForm(){
-    const { user } = useContext(AuthContext);
     const [submittedIsbn, setSubmittedIsbn] = useState("");
     const [currentBook, setCurrentBook] = useState<Book | undefined>();
 
