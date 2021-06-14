@@ -1,14 +1,16 @@
 import { ObjectId } from 'mongodb';
 import { Book } from './Book';
 
-export interface Member {
-    _id?: ObjectId;
-    name: string;
-    books: MemberBook;
-}
-
 export interface MemberBook {
+    _id?: ObjectId;
+    memberName: string;
     book: Book;
     currentPage: number;
     isFinished: boolean;
 }
+
+export interface ProgressUpdate {
+    currentPage:number;
+    isFinished:boolean
+}
+
