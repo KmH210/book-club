@@ -9,3 +9,19 @@ if (!baseUrl) {
 export function readAllPosts():Promise<LogPost[]> {
   return axios.get(baseUrl).then(res => res.data);
 }
+
+
+//readCurrentCompetition
+
+//readMostPages
+
+//readMostBooks
+
+//createNewMemberBook
+
+//readCurrentMemberBooks
+
+//updateMemberBook
+
+//updateCurrentCompetition
+
