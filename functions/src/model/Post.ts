@@ -4,7 +4,7 @@ import { Book } from "./Book";
 export interface LogPost{
     _id?: ObjectId;
     memberName: string;
-    typeOfPost: string;
+    typeofPost: string;
     book: Book;
     pagesRead?:number;
     currentPage?: number;

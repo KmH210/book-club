@@ -1,7 +1,6 @@
 export interface Book {
-    ISBN_13: number;
+    ISBN_13: string[];
     title: string;
-    author: string;
-    numberOfPages: number;
+    number_of_pages: number;
     coverId: number[];
 }
