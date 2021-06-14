@@ -1,4 +1,5 @@
 import axios from "axios";
+import { MemberBook } from "../model/book";
 import { LogPost } from "../model/LogPost";
 
 const baseUrl = process.env.REACT_APP_API_URL || "";
@@ -7,7 +8,11 @@ if (!baseUrl) {
 }
 
 export function readAllPosts():Promise<LogPost[]> {
-  return axios.get(baseUrl).then(res => res.data);
+  return axios.get(`${baseUrl}posts`).then(res => res.data);
+}
+
+export function createNewMemberBook(newMemberBook: MemberBook):Promise<MemberBook> {
+  return axios.post(`${baseUrl}member`, newMemberBook).then(res => res.data);
 }
 
 
