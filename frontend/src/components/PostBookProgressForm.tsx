@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Book from "../model/book";
 import { LogPost } from "../model/LogPost";
 import PostCard from "./PostCard";
-
 import { readAllPosts } from "../service/BookClubApiService";
 
 

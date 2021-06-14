@@ -7,4 +7,5 @@ export interface LogPost{
     typeOfPost: string;
     book: Book;
     pagesRead?:number;
+    currentPage?: number;
 }
