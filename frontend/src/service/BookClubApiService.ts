@@ -1,6 +1,6 @@
 import axios from "axios";
 import { MemberBook } from "../model/book";
-import { Competition, MemberStats } from "../model/Competition";
+import { Competition, MemberStats, Totals } from "../model/Competition";
 import { LogPost } from "../model/LogPost";
 import { MemberLog } from "../model/MemberLog";
 import { ProgressUpdate } from "../model/ProgressUpdate";
@@ -58,4 +58,8 @@ export function updateCurrentMemberBook(update:ProgressUpdate, id:string):Promis
 //updateCurrentCompetition
 export function updateCurrentCompetition(newMemberLog:MemberLog):Promise<MemberLog> {
   return axios.put(`${baseUrl}competition`, newMemberLog).then(res => res.data);
+}
+
+export function readAllTotals():Promise<Totals[]> {
+  return axios.get(`${baseUrl}competition/totals`).then(res => res.data);
 }

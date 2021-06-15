@@ -18,3 +18,8 @@ export interface MemberStats {
     totalPages: number;
     totalBooksFinished: number;
 }
+
+export interface Totals {
+    totalPages: number;
+    totalBooksFinished: number;
+}
