@@ -143,6 +143,38 @@ app.get("/currentStats", async (req, res) => {
     }
 } );
 
+//READ total pages and book for all participants
+
+app.get("/totals", async (req, res) => {
+    
+  try {
+    const client = await getClient();
+    const results = await client.db().collection('competitions').aggregate([{$match: {isFinished:false}}, 
+
+      {$unwind: "$memberLogs"},
+      {$group: {
+        _id: null,
+        totalBooks: {$sum: "$memberLogs.booksFinished"},
+        totalPages: {$sum: "$memberLogs.pagesRead"}
+
+      }},
+     
+      {$project: {
+        
+        totalPages: "$totalPages",
+        totalBooksFinished: "$totalBooks",
+        _id: false
+      }}
+
+    ]).toArray();
+
+
+    res.json(results); // send JSON results
+  } catch (err) {
+    console.error("FAIL", err);
+    res.status(500).json({message: "Internal Server Error"});
+  }
+});
  
 
 
