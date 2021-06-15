@@ -97,7 +97,7 @@ app.get("/mostBooksFinished", async (req, res) => {
     }
   });
 
-//This is has both stats for each person, and is sorted by pages. We may want to change that or add another query to sort by books. 
+//This has both stats for each person, and is sorted by pages. We may want to change that or add another query to sort by books. 
 app.get("/currentStats", async (req, res) => {
     
     try {

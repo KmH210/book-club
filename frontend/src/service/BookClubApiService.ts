@@ -1,5 +1,6 @@
 import axios from "axios";
 import { MemberBook } from "../model/book";
+import Competition from "../model/Competition";
 import { LogPost } from "../model/LogPost";
 
 const baseUrl = process.env.REACT_APP_API_URL || "";
@@ -17,6 +18,10 @@ export function setNewMemberBook(newMemberBook: MemberBook):Promise<MemberBook> 
 
 export function createBookPost(newMemberBook: MemberBook):Promise<LogPost> {
   return axios.post(`${baseUrl}posts`, newMemberBook).then(res => res.data);
+}
+
+export function readCompetitionStats():Promise<Competition> {
+  return axios.get(`${baseUrl}competition`).then(res => res.data);
 }
 
 //readCurrentCompetition
