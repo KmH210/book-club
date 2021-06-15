@@ -23,8 +23,6 @@ function CompetitionSummary(){
        readCurrentCompetition().then(competitionFromApi => {
            setCompetition(competitionFromApi);
        });
-       console.log(pagesLeader);
-       console.log(booksLeader);
     }, []);
 
 

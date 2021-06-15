@@ -12,3 +12,9 @@ export interface MemberLog {
     pagesRead: number;
     booksFinished: number;
 }
+
+export interface MemberStats {
+    name: string;
+    totalPages: number;
+    totalBooksFinished: number;
+}

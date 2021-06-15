@@ -1,6 +1,6 @@
 import axios from "axios";
 import { MemberBook } from "../model/book";
-import { Competition } from "../model/Competition";
+import { Competition, MemberStats } from "../model/Competition";
 import { LogPost } from "../model/LogPost";
 import { MemberLog } from "../model/MemberLog";
 import { ProgressUpdate } from "../model/ProgressUpdate";
@@ -24,7 +24,7 @@ export function createBookPost(newMemberBook: MemberBook):Promise<LogPost> {
   return axios.post(`${baseUrl}posts`, newMemberBook).then(res => res.data);
 }
 
-export function readCompetitionStats():Promise<Competition> {
+export function readCompetitionStats():Promise<MemberStats[]> {
   return axios.get(`${baseUrl}competition/currentstats`).then(res => res.data);
 }
 

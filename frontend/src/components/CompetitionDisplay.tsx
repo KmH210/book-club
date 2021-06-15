@@ -1,16 +1,36 @@
+import React, { useEffect, useState } from "react";
+// import Book from "../model/book";
+import { LogPost } from "../model/LogPost";
+import PostCard from "./PostCard";
+import { readAllPosts, readCompetitionStats, readCurrentCompetition, readMostBooks, readMostPages } from "../service/BookClubApiService";
+import { Competition, MemberStats } from "../model/Competition";
+   
 
 
 function CompetitionDisplay(){
+
+    const [competition, setCompetition] = useState<Competition>()
+    const [stats, setStats] = useState<MemberStats[]>()
+
+    useEffect(() => {
+       readCurrentCompetition().then(competitionFromApi => {
+           setCompetition(competitionFromApi);
+       });
+       readCompetitionStats().then(statsFromApi => {
+           setStats(statsFromApi);
+       })
+    }, []);
+
     return(
         <div className="CompetitionDisplay">
-           <h3>Competition Name</h3>
-           <p></p>
-           <h3>Competition End Date</h3>
-           <p></p>
+           <h2>{competition?.name}</h2>
+           <p>This competition ends on: {competition?.endDate}</p>
            <h4>Pages</h4>
-           <p></p>
+           <ul>{stats?.map(eachStat => 
+           <li key={eachStat.name}>{eachStat.name}: {eachStat.totalPages} pages</li>)}</ul>
            <h4>Books</h4>
-           <p></p>
+           <ul>{stats?.map(eachStat => 
+           <li key={eachStat.name}>{eachStat.name}: {eachStat.totalBooksFinished} books</li>)}</ul>
         </div>
     )
 }
