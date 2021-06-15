@@ -1,4 +1,5 @@
 
+
 function CompetitionSummary(){
     return(
         <div className="CompetitionSummary">
