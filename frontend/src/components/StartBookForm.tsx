@@ -1,7 +1,7 @@
 import React, { FormEvent, useContext, useState } from "react";
 import { AuthContext } from "../context/auth-context";
 import Book from "../model/book";
-import { createNewMemberBook } from "../service/BookClubApiService";
+import { createBookPost, setNewMemberBook } from "../service/BookClubApiService";
 // import { LogPost } from "../model/LogPost";
 // import PostCard from "./PostCard";
 // import { readAllPosts } from "../service/BookClubApiService";
@@ -22,11 +22,13 @@ function StartBookForm(){
 
     function handleBookSubmit(event: FormEvent): void {
         event.preventDefault();
+        setNewMemberBook(newMemberBook);
+        createBookPost(newMemberBook);
     }
   
     const newMemberBook = {
-        memberName: user?.displayName,
-        book: currentBook,
+        memberName: (user?.displayName ?? ""),
+        book: (currentBook ?? {isbn_10: [""], title: "", number_of_pages: 0}),
         currentPage: 0,
         isFinished: false
     }
@@ -40,7 +42,7 @@ function StartBookForm(){
                </label>
                <button type="submit">Find Book</button>
                {currentBook && <div><p>You have chosen {currentBook.title}</p>
-               <button type="submit">Start Reading This Book</button></div>}
+               <button onClick={handleBookSubmit}>Start Reading This Book</button></div>}
            </form>
         </div>
     )
