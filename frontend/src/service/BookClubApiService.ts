@@ -1,9 +1,10 @@
 import axios from "axios";
 import { MemberBook } from "../model/book";
-import Competition from "../model/Competition";
+import { Competition } from "../model/Competition";
 import { LogPost } from "../model/LogPost";
 import { MemberLog } from "../model/MemberLog";
 import { ProgressUpdate } from "../model/ProgressUpdate";
+import { PagesLeader, BooksLeader} from "../model/Leader";
 
 const baseUrl = process.env.REACT_APP_API_URL || "";
 if (!baseUrl) {
@@ -24,16 +25,23 @@ export function createBookPost(newMemberBook: MemberBook):Promise<LogPost> {
 }
 
 export function readCompetitionStats():Promise<Competition> {
-  return axios.get(`${baseUrl}competition`).then(res => res.data);
+  return axios.get(`${baseUrl}competition/currentstats`).then(res => res.data);
 }
 
 
 //readCurrentCompetition
+export function readCurrentCompetition():Promise<Competition> {
+  return axios.get(`${baseUrl}competition`).then(res => res.data);
+}
 
 //readMostPages
-
+export function readMostPages():Promise<PagesLeader[]> {
+  return axios.get(`${baseUrl}competition/mostPages`).then(res => res.data);
+}
 //readMostBooks
-
+export function readMostBooks():Promise<BooksLeader[]> {
+  return axios.get(`${baseUrl}competition/mostBooksFinished`).then(res => res.data);
+}
 //createNewMemberBook
 
 //readCurrentMemberBooks
