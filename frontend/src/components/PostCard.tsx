@@ -1,5 +1,3 @@
-// import { useState } from "react";
-// import Book from "../model/book";
 import { LogPost } from "../model/LogPost";
 
 interface Props {

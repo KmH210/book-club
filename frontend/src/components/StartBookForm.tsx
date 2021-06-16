@@ -1,11 +1,9 @@
-import React, { FormEvent, useContext, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { AuthContext } from "../context/auth-context";
 import Book from "../model/book";
+import { LogPost } from "../model/LogPost";
 import { createBookPost, setNewMemberBook } from "../service/BookClubApiService";
-// import { LogPost } from "../model/LogPost";
-// import PostCard from "./PostCard";
-// import { readAllPosts } from "../service/BookClubApiService";
-// import { isMemberName } from "typescript";
 import { getABook } from "../service/OpenLibraryApiService";
 
 
@@ -13,6 +11,7 @@ function StartBookForm(){
     const { user } = useContext(AuthContext);
     const [submittedIsbn, setSubmittedIsbn] = useState("");
     const [currentBook, setCurrentBook] = useState<Book | undefined>();
+    const history = useHistory();
 
     function handleSubmit(event: FormEvent): void {
         event.preventDefault();
@@ -23,14 +22,22 @@ function StartBookForm(){
     function handleBookSubmit(event: FormEvent): void {
         event.preventDefault();
         setNewMemberBook(newMemberBook);
-        createBookPost(newMemberBook);
+        createBookPost(newPost);
+        history.push("/");
     }
   
     const newMemberBook = {
         memberName: (user?.displayName ?? ""),
-        book: (currentBook ?? {isbn_10: [""], title: "", number_of_pages: 0}),
+        book: (currentBook ?? {isbn_13: [""], title: "", number_of_pages: 0}),
         currentPage: 0,
         isFinished: false
+    }
+
+    const newPost:LogPost = {
+        memberName: user?.displayName!,
+        typeofPost: "startBook",
+        book: (currentBook ?? {isbn_13: [""], title: "", number_of_pages: 0}),
+        currentPage: 0
     }
         
     return(
@@ -42,7 +49,7 @@ function StartBookForm(){
                </label>
                <button type="submit">Find Book</button>
                {currentBook && <div><p>You have chosen {currentBook.title}</p>
-               <button onClick={handleBookSubmit}>Start Reading This Book</button></div>}
+               <button onClick={handleBookSubmit} >Start Reading This Book</button></div>}
            </form>
         </div>
     )

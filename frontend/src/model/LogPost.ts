@@ -6,6 +6,5 @@ export interface LogPost{
     typeofPost: string;
     book: Book;
     pagesRead?:number;
-    totalProgress: number;
     currentPage: number;
 }

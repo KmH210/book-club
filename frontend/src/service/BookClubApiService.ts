@@ -20,8 +20,8 @@ export function setNewMemberBook(newMemberBook: MemberBook):Promise<MemberBook> 
 }
 
 
-export function createBookPost(newMemberBook: MemberBook):Promise<LogPost> {
-  return axios.post(`${baseUrl}posts`, newMemberBook).then(res => res.data);
+export function createBookPost(newPost: LogPost):Promise<LogPost> {
+  return axios.post(`${baseUrl}posts`, newPost).then(res => res.data);
 }
 
 export function readCompetitionStats():Promise<MemberStats[]> {

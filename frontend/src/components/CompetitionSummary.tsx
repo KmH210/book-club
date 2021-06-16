@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from "react";
-// import Book from "../model/book";
-import { LogPost } from "../model/LogPost";
-import PostCard from "./PostCard";
-import { readAllPosts, readCurrentCompetition, readMostBooks, readMostPages } from "../service/BookClubApiService";
+import { useEffect, useState } from "react";
+import { readCurrentCompetition, readMostBooks, readMostPages } from "../service/BookClubApiService";
 import { BooksLeader, PagesLeader } from "../model/Leader";
 import { Competition } from "../model/Competition";
    
