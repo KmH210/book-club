@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { LogPost } from "../model/LogPost";
 import PostCard from "./PostCard";
-import { readAllPosts } from "../service/BookClubApiService";
+import { createNewCompetition, readAllPosts } from "../service/BookClubApiService";
 import CompetitionSummary from "./CompetitionSummary";
 import "./MainFeed.css"
+import CompetitionForm from "./CompetitionForm";
+import { Competition } from "../model/Competition";
 
 function MainFeed(){
     const [posts, setPosts] = useState<LogPost[]>();
-
+    
     useEffect(() => {
         loadPosts();
     }, []);
@@ -21,6 +23,7 @@ function MainFeed(){
     return(
         <div className="MainFeed">
             <CompetitionSummary />
+            <CompetitionForm />
              {posts && posts.map(eachPosts =>
             <PostCard key={eachPosts._id} post= {eachPosts}
             />)}
