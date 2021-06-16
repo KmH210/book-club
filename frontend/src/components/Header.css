@@ -9,15 +9,16 @@
 }
 
 .Logo {
-    max-height: 50%;
-    max-width: 50%;
-    margin-left: 40%;
+    max-height: 40%;
+    max-width: 40%;
     border-radius: 20px;
     margin-top: 10px;
+    margin-right: 20px;
 }
 
 .Header h1 {
     text-align: center;
+    text-shadow: #2e282a .5px 0 1px;
 }
 
 .Header p {
@@ -34,18 +35,45 @@
     border: none;
     padding: 5px;
     max-width: 80px;
-    margin-left: 45%;
     margin-bottom: 10px;
     margin-top: 10px;
+    text-shadow: #2e282a .5px 0 1px;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: flex;
 }
 
 .Title {
     display: flex;
     flex-direction: column;
+    margin-left: 10px;
 }
 
-.RightSide {
-    display: flex;
-    flex-direction: column;
-    max-width: 50vw;
+@media only screen and (min-width: 768px) {
+    .Header button {
+        min-width: 20px;
+        max-height: 50px;
+        margin-left: 0;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        text-shadow: #2e282a .5px 0 1px;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        align-items: center;
+        position: relative;
+        right: 80px;
+    }
+
+    .Logo {
+        max-height: 50%;
+        max-width: 50%;
+        margin-left: 0;
+        border-radius: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        position: relative;
+        right: -120px;
+    }
 }

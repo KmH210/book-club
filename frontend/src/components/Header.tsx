@@ -14,12 +14,13 @@ function Header(){
                 <h1>Read It and Weep</h1>
                 <p>The competitive book club</p>
             </div>
+            <img className="Logo" src={Logo1} alt="Read It And Weep"/>
             { !user ? <button onClick={signInWithGoogle}>Sign In With Google</button> :
-            <div className="RightSide">
+            <div>
                 <button onClick={signOut}>Sign Out</button>
-                <img className="Logo" src={Logo1} alt="Read It And Weep"/>
             </div>}
         </header>
+        
     )
 }
 
