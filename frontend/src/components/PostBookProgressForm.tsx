@@ -51,6 +51,7 @@ function StartBookForm(){
             memberName: memberName,
             typeofPost: postType,
             book: currentBook?.book!,
+            pagesRead: pagesRead,
             currentPage: newCurrentPage
         }
 
