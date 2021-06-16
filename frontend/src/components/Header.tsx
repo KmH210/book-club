@@ -10,15 +10,16 @@ function Header(){
     
     return(
         <header className="Header">
+            <img className="Logo" src={Logo1} alt="Read It And Weep"/>
             <div className="Title">
                 <h1>Read It and Weep</h1>
-                <p>The competitive book club</p>
+                <p className="headerSubtitle">The competitive book club</p>
             </div>
-            <img className="Logo" src={Logo1} alt="Read It And Weep"/>
+            
             { !user ? <button onClick={signInWithGoogle}>Sign In With Google</button> :
-            <div>
+            <p>
                 <button onClick={signOut}>Sign Out</button>
-            </div>}
+            </p>}
         </header>
         
     )

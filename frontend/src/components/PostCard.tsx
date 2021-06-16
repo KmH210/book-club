@@ -12,7 +12,8 @@ function PostCard({ post}: Props) {
         <div className="PostCard">
             {post.typeofPost === "logProgress" && 
                 <div className="logProgressPostCard">
-                    <p>{post.memberName} has just read {post.pagesRead} pages from <em>{post.book.title}</em>. They have read {post.currentPage} out of {post.book.number_of_pages} pages.</p>
+                    <p>{post.memberName} has just read {post.pagesRead} pages from <em>{post.book.title}</em>.</p>
+                    <p>They have read {post.currentPage} out of {post.book.number_of_pages} pages.</p>
                     <div className="statusBar" style={{width: post.currentPage/post.book.number_of_pages*100 + "%"}}></div>
                 </div>}
             

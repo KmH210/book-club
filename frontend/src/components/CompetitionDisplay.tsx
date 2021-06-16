@@ -33,7 +33,7 @@ function CompetitionDisplay(){
            <ul className="statusBarsContainer">{stats?.map(eachStat => 
                 <li  key={eachStat.name}> 
                     <p>{eachStat.name}: {eachStat.totalPages} pages</p>
-                    <div className="statusBar" style={{width: eachStat.totalPages/totals?.totalPages!*100 + "%"}}></div>
+                    <div className="statusBarGhost"><div className="statusBar" style={{width: eachStat.totalPages/totals?.totalPages!*100 + "%"}}></div></div>
                 </li>
                 )}
            </ul>
@@ -46,7 +46,7 @@ function CompetitionDisplay(){
            <ul className="statusBarsContainer">{stats?.map(eachStat => 
                 <li  key={eachStat.name}> 
                     <p>{eachStat.name}: {eachStat.totalBooksFinished} book(s)</p>
-                    <div className="statusBar" style={{width: eachStat.totalBooksFinished/totals?.totalBooksFinished!*100 + "%"}}></div>
+                    <div className="statusBarGhost"><div className="statusBar" style={{width: eachStat.totalBooksFinished/totals?.totalBooksFinished!*100 + "%"}}></div></div>
                 </li>
                 )}
            </ul>

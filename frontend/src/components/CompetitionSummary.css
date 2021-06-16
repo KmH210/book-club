@@ -7,9 +7,29 @@
     align-content: center;
     text-align: center;
     background-color: #ffcfa4;
-    margin: 20px;
+    margin: 20px auto;
+    margin-bottom: 60px;
     border-radius: 6px;
     box-shadow: 6px 6px 2px 2px #17BEBB;
+    /* border: 3px solid #17BEBB; */
+    padding-left: 8px;
+    padding-right: 8px;
+    max-width: 600px;
+    
+}
+
+.CompetitionSummary h2 {
+    font-size: 1.25em;
+}
+
+.titleName {
+    /* font-family: "Old Standard TT", serif; */
+    font-size: 1.35em;
+    
+}
+
+.CompetitionSummary p {
+    margin-top: 0;
 }
 
 @media only screen and (min-width: 768) {

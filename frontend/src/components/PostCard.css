@@ -2,16 +2,19 @@
     display: flex;
     flex-direction: column;
     background-color: #ffcfa4;
-    margin: 20px;
+    margin: 20px auto;
     border-radius: 6px;
     text-align: center;
     box-shadow: 6px 6px 2px 2px #EF3E36;
     color: #2E282A;
+    max-width: 600px;
 }
 
 .statusBar {
-    margin: 5px;
+    /* margin: 5px; */
     border-radius: 12px;
     background-color: #17BEBB;
+    /* transition: 1s ease;
+    transition-delay: 0.5s; */
 }
 

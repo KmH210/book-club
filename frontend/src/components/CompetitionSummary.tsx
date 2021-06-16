@@ -28,7 +28,7 @@ function CompetitionSummary(){
     return(
         <div className="CompetitionSummary">
             {competition? <>
-           <h2>Competition Name: {competition?.name}</h2>
+           <h2>Competition Name:<br/> <span className="titleName">{competition?.name}</span></h2>
            <h3>Current Leaders</h3>
            {pagesLeader && <p>Most Pages Read: {pagesLeader.name}, {pagesLeader.totalPages} Pages</p>}
            {booksLeader && <p>Most Books Read: {booksLeader.name}, {booksLeader.totalBooksFinished} Books</p>} 
