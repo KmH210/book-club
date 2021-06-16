@@ -48,7 +48,7 @@ function StartBookForm(){
                <input type="text" value={submittedIsbn} onChange={(e) => setSubmittedIsbn(e.target.value)}></input>
                </label>
                <button type="submit">Find Book</button>
-               {currentBook && <div><p>You have chosen {currentBook.title}</p>
+               {currentBook && <div><p>You have chosen <em>{currentBook.title}</em></p>
                <button onClick={handleBookSubmit} >Start Reading This Book</button></div>}
            </form>
         </div>

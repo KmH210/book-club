@@ -58,7 +58,7 @@ function StartBookForm(){
            <form onSubmit={handleSubmit}>
                <p>Log your progress</p>
                {currentBook ?  <>
-                <p>You are reading {currentBook.book.title}</p> 
+                <p>You are reading <em>{currentBook.book.title}</em>.</p> 
                 <p>
                     <label>How many pages did you read?
                         <input type="number" value={pagesRead} onChange={(e) => setPagesRead(Number(e.target.value))}></input>
