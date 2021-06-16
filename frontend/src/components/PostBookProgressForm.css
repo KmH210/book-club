@@ -1,0 +1,19 @@
+.PostBookProgress {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.PostBookProgress button {
+    margin: 10px;
+    background-color: #EF3E36;
+    border-radius: 8px;
+    border: none;
+    padding: 5px;
+}
+
+.PostBookProgress input {
+    border: solid 1px #2e282a;
+    border-radius: 8px;
+    text-align: center;
+}

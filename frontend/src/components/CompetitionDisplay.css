@@ -1,0 +1,20 @@
+.CompetitionDisplay ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.CompetitionDisplay h3 {
+    text-align: center;
+}
+
+.CompetitionDisplay p {
+    text-align: center;
+}
+
+.CompetitionDisplay li {
+    background-color: #ffcfa4;
+    margin: 20px;
+    min-width: 50%;
+    border-radius: 20px;
+    box-shadow: 6px 6px 2px 2px #EF3E36;
+}

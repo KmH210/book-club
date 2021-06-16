@@ -1,0 +1,18 @@
+.StartBookForm {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.StartBookForm button {
+    margin: 10px;
+    background-color: #EF3E36;
+    border-radius: 8px;
+    border: none;
+    padding: 5px;
+}
+
+.StartBookForm input {
+    border: solid 1px #2e282a;
+    border-radius: 8px;
+}

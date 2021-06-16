@@ -5,6 +5,7 @@ import Book from "../model/book";
 import { LogPost } from "../model/LogPost";
 import { createBookPost, setNewMemberBook } from "../service/BookClubApiService";
 import { getABook } from "../service/OpenLibraryApiService";
+import "./StartBookForm.css"
 
 
 function StartBookForm(){
@@ -44,10 +45,12 @@ function StartBookForm(){
         <div className="StartBookForm">
            <form onSubmit={handleSubmit}>
                <p>What book are you starting?</p>
-               <label>Enter ISBN #
+               <label>Enter ISBN #{" "}
                <input type="text" value={submittedIsbn} onChange={(e) => setSubmittedIsbn(e.target.value)}></input>
                </label>
+               <p>
                <button type="submit">Find Book</button>
+               </p>
                {currentBook && <div><p>You have chosen <em>{currentBook.title}</em></p>
                <button onClick={handleBookSubmit} >Start Reading This Book</button></div>}
            </form>

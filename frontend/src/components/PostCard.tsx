@@ -1,4 +1,5 @@
 import { LogPost } from "../model/LogPost";
+import "./PostCard.css"
 
 interface Props {
     post: LogPost;

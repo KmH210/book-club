@@ -5,6 +5,7 @@ import { AuthContext } from "../context/auth-context";
 import { ProgressUpdate } from "../model/ProgressUpdate";
 import { useHistory } from "react-router-dom";
 import { LogPost } from "../model/LogPost";
+import "./PostBookProgressForm.css"
 
 function StartBookForm(){
     const { user } = useContext(AuthContext);
@@ -54,13 +55,13 @@ function StartBookForm(){
 
 
     return(
-        <div className="StartBookForm">
+        <div className="PostBookProgress">
            <form onSubmit={handleSubmit}>
                <p>Log your progress</p>
                {currentBook ?  <>
                 <p>You are reading <em>{currentBook.book.title}</em>.</p> 
                 <p>
-                    <label>How many pages did you read?
+                    <label>How many pages did you read?{" "}
                         <input type="number" value={pagesRead} onChange={(e) => setPagesRead(Number(e.target.value))}></input>
                     </label>
                 </p>

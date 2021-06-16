@@ -3,6 +3,7 @@ import { LogPost } from "../model/LogPost";
 import PostCard from "./PostCard";
 import { readAllPosts } from "../service/BookClubApiService";
 import CompetitionSummary from "./CompetitionSummary";
+import "./MainFeed.css"
 
 function MainFeed(){
     const [posts, setPosts] = useState<LogPost[]>();

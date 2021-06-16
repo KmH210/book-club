@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { readCurrentCompetition, readMostBooks, readMostPages } from "../service/BookClubApiService";
 import { BooksLeader, PagesLeader } from "../model/Leader";
 import { Competition } from "../model/Competition";
+import "./CompetitionSummary.css"
    
 
 function CompetitionSummary(){

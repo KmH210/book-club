@@ -1,6 +1,7 @@
 import { AuthContext } from "../context/auth-context";
 import { useContext } from "react";
 import { signInWithGoogle, signOut } from "../firebaseConfig";
+import "./Header.css"
 
 
 function Header(){

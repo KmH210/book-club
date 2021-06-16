@@ -1,0 +1,27 @@
+.App ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: space-around;
+    padding: 3px;
+    border-top: solid 10px #EF3E36;
+    border-bottom: solid 10px #17BEBB;
+    margin: 0;
+}
+
+.App li {
+    padding: 10px;
+
+}
+
+.App a {
+    color: #EF3E36;
+}
+
+
+
+

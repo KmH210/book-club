@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { readAllTotals, readCompetitionStats, readCurrentCompetition } from "../service/BookClubApiService";
 import { Competition, MemberStats, Totals } from "../model/Competition";
+import "./CompetitionDisplay.css"
 
 
 function CompetitionDisplay(){
@@ -35,7 +36,7 @@ function CompetitionDisplay(){
            <h3>Books</h3>
            <ul className="statusBarsContainer">{stats?.map(eachStat => 
                 <li  key={eachStat.name}> 
-                    <p>{eachStat.name}: {eachStat.totalBooksFinished} pages</p>
+                    <p>{eachStat.name}: {eachStat.totalBooksFinished} book(s)</p>
                     <div className="statusBar" style={{width: eachStat.totalBooksFinished/totals?.totalBooksFinished!*100 + "%"}}></div>
                 </li>
                 )}

@@ -1,0 +1,17 @@
+.PostCard {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffcfa4;
+    margin: 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 6px 6px 2px 2px #EF3E36;
+    color: #2E282A;
+}
+
+.statusBar {
+    margin: 5px;
+    border-radius: 12px;
+    background-color: #17BEBB;
+}
+
