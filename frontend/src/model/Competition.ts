@@ -23,3 +23,9 @@ export interface Totals {
     totalPages: number;
     totalBooksFinished: number;
 }
+
+export interface StartNewCompetition {
+    name: string;
+    startDate: string;
+    endDate: string;
+}
