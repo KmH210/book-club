@@ -20,14 +20,17 @@ function MainFeed(){
 
     return(
         <div className="MainFeed">
-            <CompetitionSummary />
-             {posts && posts.map(eachPosts =>
+            {!loadPosts ? (
+          <p>Loading...</p>
+        ) : (
+            <CompetitionSummary />)}
+             {!loadPosts ? (
+          <p>Loading...</p>
+        ) : (posts && posts.map(eachPosts =>
             <PostCard key={eachPosts._id} post= {eachPosts}
-            />)}
+            />))}
         </div>
     )
 }
 
 export default MainFeed;
-
-

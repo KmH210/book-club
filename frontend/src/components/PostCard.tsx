@@ -27,5 +27,3 @@ function PostCard({ post}: Props) {
 }
 
 export default PostCard;
-
-

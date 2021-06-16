@@ -7,7 +7,6 @@ import { createBookPost, setNewMemberBook } from "../service/BookClubApiService"
 import { getABook } from "../service/OpenLibraryApiService";
 import "./StartBookForm.css"
 
-
 function StartBookForm(){
     const { user } = useContext(AuthContext);
     const [submittedIsbn, setSubmittedIsbn] = useState("");
@@ -43,6 +42,9 @@ function StartBookForm(){
         
     return(
         <div className="StartBookForm">
+            {!user ? (
+            <p>Please sign in to your Google account to use the site</p>
+            ) : (
            <form onSubmit={handleSubmit}>
                <p>What book are you starting?</p>
                <label>Enter ISBN #{" "}
@@ -53,10 +55,9 @@ function StartBookForm(){
                </p>
                {currentBook && <div><p>You have chosen <em>{currentBook.title}</em></p>
                <button onClick={handleBookSubmit} >Start Reading This Book</button></div>}
-           </form>
+           </form>)}
         </div>
     )
 }
 
 export default StartBookForm;
-
