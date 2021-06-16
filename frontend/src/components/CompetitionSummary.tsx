@@ -3,6 +3,7 @@ import { readCurrentCompetition, readMostBooks, readMostPages } from "../service
 import { BooksLeader, PagesLeader } from "../model/Leader";
 import { Competition } from "../model/Competition";
 import "./CompetitionSummary.css"
+import { Link } from "react-router-dom";
    
 
 function CompetitionSummary(){
@@ -26,12 +27,15 @@ function CompetitionSummary(){
 
     return(
         <div className="CompetitionSummary">
+            {competition? <>
            <h2>Competition Name: {competition?.name}</h2>
            <h3>Current Leaders</h3>
            {pagesLeader && <p>Most Pages Read: {pagesLeader.name}, {pagesLeader.totalPages} Pages</p>}
            {booksLeader && <p>Most Books Read: {booksLeader.name}, {booksLeader.totalBooksFinished} Books</p>} 
            <p>This competition ends on: {competition?.endDate}</p>  
-        </div>
+           </>:
+           <p><Link to="/start-new-competition">Start a New Competition</Link></p>
+            }</div>
     )
 }
 

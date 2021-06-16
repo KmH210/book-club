@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import './App.css';
 import CompetitionDisplay from './components/CompetitionDisplay';
+import CompetitionForm from './components/CompetitionForm';
 import Header from './components/Header';
 import MainFeed from './components/MainFeed';
 import PostBookProgressForm from './components/PostBookProgressForm';
@@ -32,6 +33,9 @@ function App() {
             </Route>
             <Route path="/update-book-progress">
               <PostBookProgressForm/>
+            </Route>
+            <Route path="/start-new-competition">
+              <CompetitionForm />
             </Route>
         </Switch>
     </div>
