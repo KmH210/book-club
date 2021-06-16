@@ -38,7 +38,8 @@ function StartBookForm(){
             }
 
         let newBookFinished;
-            if (isBookFinished) {newBookFinished = 1} else {newBookFinished = 0}; 
+        let postType;
+            if (isBookFinished) {newBookFinished = 1; postType = "finishBook"} else {newBookFinished = 0; postType = "logProgress"}; 
         
         const newMemberLog = {
                 memberName: memberName,
@@ -48,7 +49,7 @@ function StartBookForm(){
 
         const newPost:LogPost = {
             memberName: memberName,
-            typeofPost: "logProgress",
+            typeofPost: postType,
             book: currentBook?.book!,
             currentPage: newCurrentPage
         }
@@ -56,6 +57,9 @@ function StartBookForm(){
 
     return(
         <div className="PostBookProgress">
+            {!user ? (
+            <p>Please sign in to your Google account to use the site</p>
+            ) : (
            <form onSubmit={handleSubmit}>
                <p>Log your progress</p>
                {currentBook ?  <>
@@ -72,7 +76,7 @@ function StartBookForm(){
                 </p>
                 <button type="submit"  >Update</button></>
                : <p>You are not currently reading a book</p>}
-           </form>
+           </form>)}
         </div>
     )
 }

@@ -23,6 +23,10 @@ function CompetitionDisplay(){
     
     return(
         <div className="CompetitionDisplay">
+            {!setStats ? (
+          <p>Loading...</p>
+        ) : (
+            <div>
            <h2>Current Competition: {competition?.name}</h2>
            <p>This competition ends on: {competition?.endDate}</p>
            <h3>Pages</h3>
@@ -33,6 +37,11 @@ function CompetitionDisplay(){
                 </li>
                 )}
            </ul>
+           </div>)}
+           {!setStats ? (
+          <p>Loading...</p>
+        ) : (
+            <div>
            <h3>Books</h3>
            <ul className="statusBarsContainer">{stats?.map(eachStat => 
                 <li  key={eachStat.name}> 
@@ -41,6 +50,7 @@ function CompetitionDisplay(){
                 </li>
                 )}
            </ul>
+           </div>)}
         </div>
     )
 }

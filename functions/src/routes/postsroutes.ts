@@ -17,7 +17,7 @@ app.use(express.json());
 app.get("/", async (req, res) => {
     try {
       const client = await getClient();
-      const results = await client.db().collection<LogPost>('posts').find().toArray();
+      const results = await client.db().collection<LogPost>('posts').find().limit(20).toArray();
       res.json(results); // send JSON results
     } catch (err) {
       console.error("FAIL", err);
