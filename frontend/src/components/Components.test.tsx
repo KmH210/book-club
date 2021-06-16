@@ -60,21 +60,21 @@ describe('StartBookForm', () => {
 	});
 });
 
-describe('CompetitionSummary', () => {
-	it('should not have any accessibility issues', async () => {
+// describe('CompetitionSummary', () => {
+// 	it('should not have any accessibility issues', async () => {
         
-		const { container } = render(<CompetitionSummary />);
-		const results = await axe(container);
-		expect(results).toHaveNoViolations(); 
-	});
-});
+// 		const { container } = render(<CompetitionSummary />);
+// 		const results = await axe(container);
+// 		expect(results).toHaveNoViolations(); 
+// 	});
+// });
 
-describe('MainFeed', () => {
-	it('should not have any accessibility issues', async () => {
+// describe('MainFeed', () => {
+// 	it('should not have any accessibility issues', async () => {
         
-		const { container } = render(<MainFeed />);
-		const results = await axe(container);
-		expect(results).toHaveNoViolations(); 
-	});
-});
+// 		const { container } = render(<MainFeed />);
+// 		const results = await axe(container);
+// 		expect(results).toHaveNoViolations(); 
+// 	});
+// });
 
