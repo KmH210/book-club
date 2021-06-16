@@ -56,6 +56,9 @@ function StartBookForm(){
 
     return(
         <div className="PostBookProgress">
+            {!user ? (
+            <p>Please sign in to your Google account to use the site</p>
+            ) : (
            <form onSubmit={handleSubmit}>
                <p>Log your progress</p>
                {currentBook ?  <>
@@ -72,7 +75,7 @@ function StartBookForm(){
                 </p>
                 <button type="submit"  >Update</button></>
                : <p>You are not currently reading a book</p>}
-           </form>
+           </form>)}
         </div>
     )
 }
