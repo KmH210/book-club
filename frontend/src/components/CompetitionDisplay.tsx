@@ -22,9 +22,9 @@ function CompetitionDisplay(){
     
     return(
         <div className="CompetitionDisplay">
-           <h2>{competition?.name}</h2>
+           <h2>Current Competition: {competition?.name}</h2>
            <p>This competition ends on: {competition?.endDate}</p>
-           <h4>Pages</h4>
+           <h3>Pages</h3>
            <ul className="statusBarsContainer">{stats?.map(eachStat => 
                 <li  key={eachStat.name}> 
                     <p>{eachStat.name}: {eachStat.totalPages} pages</p>
@@ -32,7 +32,7 @@ function CompetitionDisplay(){
                 </li>
                 )}
            </ul>
-           <h4>Books</h4>
+           <h3>Books</h3>
            <ul className="statusBarsContainer">{stats?.map(eachStat => 
                 <li  key={eachStat.name}> 
                     <p>{eachStat.name}: {eachStat.totalBooksFinished} pages</p>
