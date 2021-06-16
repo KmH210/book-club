@@ -2,6 +2,7 @@ import { AuthContext } from "../context/auth-context";
 import { useContext } from "react";
 import { signInWithGoogle, signOut } from "../firebaseConfig";
 import "./Header.css"
+import Logo1 from "C:/users/antho/desktop/book-club/frontend/src/components/RIAPLogo2.jpg"
 
 
 function Header(){
@@ -9,13 +10,15 @@ function Header(){
     
     return(
         <header className="Header">
-            <h1>Read It and Weep</h1>
+            <div className="Title">
+                <h1>Read It and Weep</h1>
+                <p>The competitive book club</p>
+            </div>
             { !user ? <button onClick={signInWithGoogle}>Sign In With Google</button> :
-            <button onClick={signOut}>Sign Out</button>}
-            { user && <div>
-                <h3>Welcome {user.displayName}!</h3>
-                { !!user.photoURL && <img src={user.photoURL} alt="" />}
-            </div> }
+            <div className="RightSide">
+                <button onClick={signOut}>Sign Out</button>
+                <img className="Logo" src={Logo1} alt="Read It And Weep"/>
+            </div>}
         </header>
     )
 }

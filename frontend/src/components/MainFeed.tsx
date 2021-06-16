@@ -26,7 +26,7 @@ function MainFeed(){
             <CompetitionSummary />)}
              {!loadPosts ? (
           <p>Loading...</p>
-        ) : (posts && posts.map(eachPosts =>
+        ) : (posts && posts.slice(0).reverse().map(eachPosts =>
             <PostCard key={eachPosts._id} post= {eachPosts}
             />))}
         </div>
