@@ -18,7 +18,7 @@ function StartBookForm(){
         readCurrentMemberBooks(memberName).then((data) => {
           setCurrentBook(data[0]);          
         });
-      }, []);
+      }, [memberName]);
 
       function handleSubmit(event:FormEvent):void {
         event.preventDefault();
