@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     background-color: #ffcfa4;
-   
 }
 
 .CompetitionDisplay h3 {
@@ -35,6 +34,10 @@ li p {
     text-align: center;
 }
 
-@media only screen and (min-width: 768) {
-    
+@media only screen and (min-width: 1025px) {
+    .CompetitionDisplay ul {
+        border-left: none;
+        border-right: none;
+        border-top: solid 10px #EF3E36;
+    }
 }

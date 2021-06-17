@@ -2,7 +2,7 @@ import { AuthContext } from "../context/auth-context";
 import { useContext } from "react";
 import { signInWithGoogle, signOut } from "../firebaseConfig";
 import "./Header.css"
-import Logo1 from "../components/RIAPLogo2.jpg"
+import Logo1 from "../components/RIAWLogo2.jpg"
 
 
 function Header(){

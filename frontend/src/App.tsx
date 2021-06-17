@@ -13,7 +13,7 @@ function App() {
     <Router>
       <div className="App">
       <Header/>
-        <nav>
+        <nav className="Nav">
           <ul>
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/current-competition">View Current Competition</NavLink></li>
