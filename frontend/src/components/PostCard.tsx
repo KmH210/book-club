@@ -18,7 +18,10 @@ function PostCard({ post}: Props) {
                 </div>}
             
             {post.typeofPost === "startBook" && 
-                <p>{post.memberName} started reading <em>{post.book.title}</em>!<br/><img src={`http://covers.openlibrary.org/b/isbn/${post.book.isbn_13}-M.jpg`} alt={`cover for ${post.book.title}`} /></p>}
+                <>
+                    <p>{post.memberName} started reading <em>{post.book.title}</em>!</p>
+                    <p><img src={`http://covers.openlibrary.org/b/isbn/${post.book.isbn_13}-M.jpg`} alt={`cover for ${post.book.title}`} /></p>
+                </>}
 
             {post.typeofPost === "finishBook" && 
                 <p>{post.memberName} finished reading <em>{post.book.title}</em>!</p>}
