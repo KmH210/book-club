@@ -74,7 +74,7 @@ function StartBookForm(){
                 <div>
                     <p>Which book did you read?</p>
                         {currentBooks?.map (eachBook =>
-                            <p key={eachBook._id}><label><input type="radio" value={eachBook._id} onChange={(e) => setSelectedBookId(e.target.value)}/> {eachBook.book.title}</label></p>
+                            <p key={eachBook._id}><label><input type="radio" name="whichBook" value={eachBook._id} onChange={(e) => setSelectedBookId(e.target.value)}/> {eachBook.book.title}</label></p>
                             )}
                         
                     
