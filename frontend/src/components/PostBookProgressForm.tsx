@@ -9,17 +9,20 @@ import "./PostBookProgressForm.css"
 
 function StartBookForm(){
     const { user } = useContext(AuthContext);
+    const [selectedBookId, setSelectedBookId] = useState("")
+    const [selectedBook, setSelectedBook] = useState<MemberBook>();
     const [pagesRead, setPagesRead] = useState(0);
     const [isBookFinished, setIsBookFinished] =useState(false);
-    const [ currentBook, setCurrentBook ] = useState<MemberBook>();
+    const [ currentBooks, setCurrentBooks ] = useState<MemberBook[]>();
     const history = useHistory();
     const memberName = user?.displayName!;
     
     useEffect(() => {
         readCurrentMemberBooks(memberName).then((data) => {
-          setCurrentBook(data[0]);          
+          setCurrentBooks(data);
+          setSelectedBook(currentBooks?.find(book => book._id === selectedBookId))          
         });
-      }, [memberName]);
+      }, [memberName, selectedBookId, currentBooks]);
 
       function handleSubmit(event:FormEvent):void {
         event.preventDefault();
@@ -27,10 +30,13 @@ function StartBookForm(){
         updateCurrentCompetition(newMemberLog)
         createBookPost(newPost);
         history.push("/");
+        
       }
 
-        const newCurrentPage = currentBook?.currentPage! + pagesRead 
-        const id = currentBook?._id!
+      
+
+        const newCurrentPage = selectedBook?.currentPage! + pagesRead 
+        const id = selectedBookId
 
         const progressUpdate:ProgressUpdate = {
                 currentPage: newCurrentPage,
@@ -50,7 +56,7 @@ function StartBookForm(){
         const newPost:LogPost = {
             memberName: memberName,
             typeofPost: postType,
-            book: currentBook?.book!,
+            book: selectedBook?.book!,
             pagesRead: pagesRead,
             currentPage: newCurrentPage
         }
@@ -58,26 +64,36 @@ function StartBookForm(){
 
     return(
         <div className="PostBookProgress">
-            {!user ? (
+            {!user ? 
             <p>Please sign in to your Google account to use the site</p>
-            ) : (
+             : 
            <form onSubmit={handleSubmit}>
-               <p>Log your progress</p>
-               {currentBook ?  <>
-                <p>You are reading <em>{currentBook.book.title}</em>.</p> 
-                <p>
-                    <label>How many pages did you read?{" "}
-                        <input type="number" value={pagesRead} onChange={(e) => setPagesRead(Number(e.target.value))}></input>
-                    </label>
-                </p>
-                <p>
-                    <label>Did you finish this book?
-                        <input type="checkbox" checked={isBookFinished} onChange={(e) => setIsBookFinished(e.target.checked)}></input>
-                    </label>
-                </p>
-                <button type="submit"  >Update</button></>
+               <h2>Log your progress</h2>
+               {currentBooks && currentBooks.length > 0 ?   
+                
+                <div>
+                    <p>Which book did you read?</p>
+                        {currentBooks?.map (eachBook =>
+                            <p key={eachBook._id}><label><input type="radio" name="whichBook" value={eachBook._id} onChange={(e) => setSelectedBookId(e.target.value)}/> {eachBook.book.title}</label></p>
+                            )}
+                        
+                    
+                
+                    <p>
+                        <label>How many pages did you read?{" "}
+                            <input type="number" value={pagesRead} onChange={(e) => setPagesRead(Number(e.target.value))}></input>
+                        </label>
+                    </p>
+                    <p>
+                        <label>Did you finish this book?
+                            <input type="checkbox" checked={isBookFinished} onChange={(e) => setIsBookFinished(e.target.checked)}></input>
+                        </label>
+                    </p>
+                    <button type="submit"  disabled={!selectedBook}>Update</button>
+                </div>
+                
                : <p>You are not currently reading a book</p>}
-           </form>)}
+           </form>}
         </div>
     )
 }
