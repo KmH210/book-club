@@ -1,6 +1,10 @@
 import { render } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
+import { BrowserRouter } from 'react-router-dom';
+import App from '../App';
+import About from './About';
 import CompetitionDisplay from './CompetitionDisplay';
+import CompetitionForm from './CompetitionForm';
 import CompetitionSummary from './CompetitionSummary';
 import Header from './Header';
 import MainFeed from './MainFeed';
@@ -18,14 +22,14 @@ describe('Header', () => {
 	});
 });
 
-describe('CompetitionDisplay', () => {
-	it('should not have any accessibility issues', async () => {
+// describe('CompetitionDisplay', () => {
+// 	it('should not have any accessibility issues', async () => {
         
-		const { container } = render(<CompetitionDisplay/>);
-		const results = await axe(container);
-		expect(results).toHaveNoViolations(); 
-	});
-});
+// 		const { container } = render(<CompetitionDisplay/>);
+// 		const results = await axe(container);
+// 		expect(results).toHaveNoViolations(); 
+// 	});
+// });
 
 describe('PostCard', () => {
 	it('should not have any accessibility issues', async () => {
@@ -60,21 +64,45 @@ describe('StartBookForm', () => {
 	});
 });
 
-// describe('CompetitionSummary', () => {
-// 	it('should not have any accessibility issues', async () => {
+describe('CompetitionSummary', () => {
+	it('should not have any accessibility issues', async () => {
         
-// 		const { container } = render(<CompetitionSummary />);
-// 		const results = await axe(container);
-// 		expect(results).toHaveNoViolations(); 
-// 	});
-// });
+		const { container } = render(
+			<BrowserRouter>
+				<CompetitionSummary />
+			</BrowserRouter>);
+		const results = await axe(container);
+		expect(results).toHaveNoViolations(); 
+	});
+});
 
-// describe('MainFeed', () => {
-// 	it('should not have any accessibility issues', async () => {
+describe('MainFeed', () => {
+	it('should not have any accessibility issues', async () => {
         
-// 		const { container } = render(<MainFeed />);
-// 		const results = await axe(container);
-// 		expect(results).toHaveNoViolations(); 
-// 	});
-// });
+		const { container } = render(
+			<BrowserRouter>
+				<MainFeed />
+			</BrowserRouter>);
+		const results = await axe(container);
+		expect(results).toHaveNoViolations(); 
+	});
+});
+
+describe('Competition Form', () => {
+	it('should not have any accessibility issues', async () => {
+        
+		const { container } = render(<CompetitionForm />);
+		const results = await axe(container);
+		expect(results).toHaveNoViolations(); 
+	});
+});
+
+describe('About', () => {
+	it('should not have any accessibility issues', async () => {
+        
+		const { container } = render(<About />);
+		const results = await axe(container);
+		expect(results).toHaveNoViolations(); 
+	});
+});
 
