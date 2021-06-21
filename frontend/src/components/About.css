@@ -1,0 +1,16 @@
+.About img {
+    max-width: 3%;
+    max-height: 3%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.About {
+    margin-left: 15%;
+    margin-right: 3%;
+}
+
+.About div {
+    border-bottom: solid 10px #EF3E36;
+    padding-bottom: 5px;
+}

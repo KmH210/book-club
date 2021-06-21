@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import './App.css';
+import About from './components/About';
 import CompetitionDisplay from './components/CompetitionDisplay';
 import CompetitionForm from './components/CompetitionForm';
 import Header from './components/Header';
 import MainFeed from './components/MainFeed';
 import PostBookProgressForm from './components/PostBookProgressForm';
 import StartBookForm from './components/StartBookForm';
+import { AuthContext } from './context/auth-context';
 
 function App() {
+  const { user } = useContext(AuthContext);
+
   return (
     <Router>
       <div className="App">
@@ -22,12 +26,18 @@ function App() {
           </ul>
         </nav>
         <Switch>
+            {!user ? <Route path="/" exact>
+              <About/>
+            </Route> :
             <Route path="/" exact>
               <MainFeed/>
-            </Route>
+            </Route>}
+            {!user ? <Route path="/current-competition" exact>
+              <About/>
+            </Route> :
             <Route path="/current-competition">
               <CompetitionDisplay />
-            </Route>
+            </Route>}
             <Route path="/start-book">
               <StartBookForm/>
             </Route>

@@ -5,7 +5,7 @@ interface Props {
     post: LogPost;
 }
 
-function PostCard({ post}: Props) {
+function PostCard({post}: Props) {
 
 
     return(
