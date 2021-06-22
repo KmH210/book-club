@@ -35,6 +35,7 @@ function StartBookForm(){
 
     const newPost:LogPost = {
         memberName: user?.displayName!,
+        memberPhoto: user?.photoURL!,
         typeofPost: "startBook",
         book: (currentBook ?? {isbn_13: [""], title: "", number_of_pages: 0}),
         currentPage: 0

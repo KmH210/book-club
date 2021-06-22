@@ -55,6 +55,7 @@ function StartBookForm(){
 
         const newPost:LogPost = {
             memberName: memberName,
+            memberPhoto: user?.photoURL!,
             typeofPost: postType,
             book: selectedBook?.book!,
             pagesRead: pagesRead,

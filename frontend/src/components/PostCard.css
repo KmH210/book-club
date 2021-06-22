@@ -1,12 +1,17 @@
 .PostCard {
     display: flex;
     flex-direction: column;
-    background-color: #ffcfa4;
-    padding: 7px;
-    margin: 20px auto;
+    background-color: #ffcea461;
+    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 25px;
+    margin: 10px auto;
+    border: #ffcfa4 1px solid;
     border-radius: 6px;
-    text-align: center;
-    box-shadow: 6px 6px 2px 2px #EF3E36;
+    text-align: left;
+    box-shadow: 4px 4px 6px .5px rgba(0, 0, 0, 0.2);
     color: #2E282A;
     max-width: 600px;
 }
@@ -24,4 +29,24 @@
     background-color: rgb(255, 255, 255, .5);
     border-radius: 12px;
     
+}
+
+.profilepic {
+    width: 40px;
+    border-radius: 6px;
+}
+
+.PostCardParagraph{
+    margin-left: 60px;
+    margin-top: -40px;
+}
+
+.PostCardSecondParagraph{
+    margin-left: 60px;
+}
+
+.CoverImage{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }

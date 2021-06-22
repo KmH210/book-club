@@ -19,8 +19,10 @@
 
 .App a {
     color: #17BEBB;
-    text-shadow: #2e282a .5px 0 1px;
+    text-decoration: none;
+    /* text-shadow: #2e282a .5px 0 1px; */
 }
+
 
 @media only screen and (min-width: 1025px) {
     .App ul {
