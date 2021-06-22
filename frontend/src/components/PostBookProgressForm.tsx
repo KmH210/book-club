@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 import { LogPost } from "../model/LogPost";
 import "./PostBookProgressForm.css"
 
-function StartBookForm(){
+function PostBookProgressForm(){
     const { user } = useContext(AuthContext);
     const [selectedBookId, setSelectedBookId] = useState("")
     const [selectedBook, setSelectedBook] = useState<MemberBook>();
@@ -99,4 +99,4 @@ function StartBookForm(){
     )
 }
 
-export default StartBookForm;
+export default PostBookProgressForm;
