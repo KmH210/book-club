@@ -4,7 +4,7 @@ import "./About.css"
 function About() {
   return (
     <div className="About">
-      <h3>Read It and Weap</h3>
+      <h2>Read It and Weep</h2>
       <p>
         Have you ever wanted to read more but found yourself falling short of
         your goals? Do you enjoy a friendly competition? <strong>Read It and Weep</strong> is the
