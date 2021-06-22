@@ -1,8 +1,9 @@
 .PostBookProgress {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    /* text-align: center; */
     border-top: solid 5px #EF3E36;
+    
 }
 
 .PostBookProgress button {
@@ -16,5 +17,25 @@
 .PostBookProgress input {
     border: solid 1px #2e282a;
     border-radius: 8px;
+    text-align: center;
+}
+
+.whichBookRadio {
+    
+    margin-left: 15px;
+    margin-top: 0;
+    margin-bottom: 4px;
+    
+}
+
+.PostBookProgress form {
+    margin: 0 auto;
+}
+
+.PostBookProgress h2 {
+    text-align: center;
+}
+
+.signInWarning {
     text-align: center;
 }

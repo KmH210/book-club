@@ -66,7 +66,7 @@ function PostBookProgressForm(){
     return(
         <div className="PostBookProgress">
             {!user ? 
-            <p>Please sign in to your Google account to use the site</p>
+            <p className="signInWarning">Please sign in to your Google account to use the site</p>
              : 
            <form onSubmit={handleSubmit}>
                <h2>Log your progress</h2>
@@ -75,7 +75,7 @@ function PostBookProgressForm(){
                 <div>
                     <p>Which book did you read?</p>
                         {currentBooks?.map (eachBook =>
-                            <p key={eachBook._id}><label><input type="radio" name="whichBook" value={eachBook._id} onChange={(e) => setSelectedBookId(e.target.value)}/> {eachBook.book.title}</label></p>
+                            <p className="whichBookRadio" key={eachBook._id}><label><input type="radio" name="whichBook"  value={eachBook._id} onChange={(e) => setSelectedBookId(e.target.value)}/> {eachBook.book.title}</label></p>
                             )}
                         
                     
