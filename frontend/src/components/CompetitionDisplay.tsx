@@ -29,6 +29,7 @@ function CompetitionDisplay(){
             <div>
            <h2>Current Competition: {competition?.name}</h2>
            <p>This competition ends on: {competition?.endDate}</p>
+            <div className="CompetitionDisplayBox">
            <h3>Pages</h3>
            <ul className="statusBarsContainer">{stats?.map(eachStat => 
                 <li  key={eachStat.name}> 
@@ -37,11 +38,12 @@ function CompetitionDisplay(){
                 </li>
                 )}
            </ul>
+           </div>
            </div>}
            {!stats ? 
           <p>Loading...</p>
          : 
-            <div>
+            <div className="CompetitionDisplayBox">
            <h3>Books</h3>
            <ul className="statusBarsContainer">{stats?.map(eachStat => 
                 <li  key={eachStat.name}> 

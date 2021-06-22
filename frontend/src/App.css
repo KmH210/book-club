@@ -1,4 +1,4 @@
-.App ul {
+.NavLinkList {
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -8,8 +8,8 @@
     align-content: center;
     justify-content: space-around;
     padding: 3px;
-    border-top: solid 10px #EF3E36;
-    border-bottom: solid 10px #17BEBB;
+    border-top: solid 5px #EF3E36;
+    border-bottom: solid 5px #17BEBB;
     margin: 0;
 }
 
@@ -17,15 +17,19 @@
     padding: 10px;
 }
 
-.App a {
+.Navs {
     color: #17BEBB;
     text-decoration: none;
     /* text-shadow: #2e282a .5px 0 1px; */
 }
 
+.selected{
+    color:gray;
+}
+
 
 @media only screen and (min-width: 1025px) {
-    .App ul {
+    .NavLinkList {
         display: flex;
         flex-direction: column;
         list-style: none;
@@ -38,8 +42,8 @@
         margin: 0;
         border-top: none;
         font-size: 1.2em;
-        border-right: solid 10px #EF3E36;
-        border-left: solid 10px #17BEBB;
+        border-right: solid 5px #EF3E36;
+        border-left: solid 5px #17BEBB;
     }
 
     .Nav {

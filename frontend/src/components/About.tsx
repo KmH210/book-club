@@ -16,19 +16,18 @@ function About() {
         for? Sign up and go grab a book already!{" "}
       </p>
       <p>
-        Book data and cover images courtesy of Open Library:
-        <a href="https://openlibrary.org/developers/api">https://openlibrary.org/developers/api</a>{" "}
+        Book data and cover images courtesy of <a href="https://openlibrary.org/developers/api">Open Library</a>
       </p>
       <div className="Links">
-      <a href="https://www.linkedin.com/in/anthonyabrignani/">
+      <span><a href="https://www.linkedin.com/in/anthonyabrignani/">
         <img src={Logo} alt="LinkedIn"></img>
-      </a>Anthony Abrignani{" "}
-      <a href="https://www.linkedin.com/in/katherine-katie-holland/">
+      </a>Anthony Abrignani{" "}</span>
+      <span><a href="https://www.linkedin.com/in/katherine-katie-holland/">
+      <img src={Logo} alt="LinkedIn"></img>
+      </a>Katie Holland{" "}</span>
+      <span><a href="https://www.linkedin.com/in/leah-luyk/">
         <img src={Logo} alt="LinkedIn"></img>
-      </a>Katie Holland{" "}
-      <a href="https://www.linkedin.com/in/leah-luyk/">
-        <img src={Logo} alt="LinkedIn"></img>
-      </a>Leah Luyk{" "}
+      </a>Leah Luyk{" "}</span>
       </div>
     </div>
   );

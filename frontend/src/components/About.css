@@ -1,16 +1,52 @@
 .About img {
     max-width: 3%;
     max-height: 3%;
-    margin-left: 10px;
-    margin-right: 10px;
+    padding-right: 5px;
+}
+.About span{
+    margin-right: 5px;
 }
 
 .About {
+    border-top: solid 5px #EF3E36;
+}
+
+.About a{
+    text-decoration: none;
+    color: #17BEBB
+}
+
+.About a:hover{
+    color:#003c3b
+}
+
+.About h3{
     margin-left: 15%;
     margin-right: 3%;
 }
 
-.About div {
-    border-bottom: solid 10px #EF3E36;
-    padding-bottom: 5px;
+.About p{
+    margin-left: 15%;
+    margin-right: 3%;
+}
+
+.Links {
+    margin-left: 15%;
+    margin-right: 3%;
+}
+
+@media only screen and (min-width: 1025px) {
+    .About h3 {
+        margin-left: 250px;
+        max-width: 600px;
+    }
+
+    .About p{
+        margin-left: 250px;
+        max-width: 600px;
+    }
+    .Links{
+        margin-left: 250px;
+        max-width: 600px;
+    }
 }

@@ -1,12 +1,3 @@
-.statusBar {
-    background-color: aqua;
-    height: 20px;
-}
-
-.statusBarContainer {
-    width: 90vw;
-}
-
 body {
     margin: 0;
     font-family: 'Edita', serif;

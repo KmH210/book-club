@@ -18,11 +18,11 @@ function App() {
       <div className="App">
       <Header/>
         <nav className="Nav">
-          <ul>
-            <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/current-competition">View Current Competition</NavLink></li>
-            <li><NavLink to="/start-book">Start a Book</NavLink></li>
-            <li><NavLink to="/update-book-progress">Update Progress</NavLink></li>
+          <ul className="NavLinkList">
+            <li><NavLink className="Navs" to="/">Home</NavLink></li>
+            <li><NavLink className="Navs" activeClassName="selected" to="/current-competition">View Current Competition</NavLink></li>
+            <li><NavLink className="Navs" activeClassName="selected" to="/start-book">Start a Book</NavLink></li>
+            <li><NavLink className="Navs" activeClassName="selected" to="/update-book-progress">Update Progress</NavLink></li>
           </ul>
         </nav>
         <Switch>
