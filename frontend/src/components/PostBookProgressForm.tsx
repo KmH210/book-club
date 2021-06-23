@@ -16,6 +16,7 @@ function PostBookProgressForm(){
     const [ currentBooks, setCurrentBooks ] = useState<MemberBook[]>();
     const history = useHistory();
     const memberName = user?.displayName!;
+    const [isSubmitting, setIsSubmitting] = useState(false);
     
     useEffect(() => {
         readCurrentMemberBooks(memberName).then((data) => {
@@ -26,11 +27,12 @@ function PostBookProgressForm(){
 
       function handleSubmit(event:FormEvent):void {
         event.preventDefault();
+        setIsSubmitting(true);
         updateCurrentMemberBook(progressUpdate, id);
         updateCurrentCompetition(newMemberLog)
-        createBookPost(newPost);
-        history.push("/");
-        
+        createBookPost(newPost).then(()=>{
+            history.push("/");
+        });
       }
 
       
@@ -90,7 +92,7 @@ function PostBookProgressForm(){
                             <input type="checkbox" checked={isBookFinished} onChange={(e) => setIsBookFinished(e.target.checked)}></input>
                         </label>
                     </p>
-                    <button type="submit"  disabled={!selectedBook}>Update</button>
+                    <button type="submit"  disabled={!selectedBook || isSubmitting}>Update</button>
                 </div>
                 
                : <p>You are not currently reading a book</p>}

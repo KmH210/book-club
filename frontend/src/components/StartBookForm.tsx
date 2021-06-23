@@ -12,6 +12,7 @@ function StartBookForm(){
     const [submittedIsbn, setSubmittedIsbn] = useState("");
     const [currentBook, setCurrentBook] = useState<Book | undefined>();
     const history = useHistory();
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     function handleSubmit(event: FormEvent): void {
         event.preventDefault();
@@ -21,9 +22,12 @@ function StartBookForm(){
 
     function handleBookSubmit(event: FormEvent): void {
         event.preventDefault();
+        setIsSubmitting(true);
         setNewMemberBook(newMemberBook);
-        createBookPost(newPost);
-        history.push("/");
+        createBookPost(newPost).then(()=>{
+            history.push("/");
+        });
+        
     }
   
     const newMemberBook = {
@@ -55,7 +59,7 @@ function StartBookForm(){
                <button type="submit">Find Book</button>
                </p>
                {currentBook && <div><p>You have chosen <em>{currentBook.title}</em></p>
-               <button onClick={handleBookSubmit} >Start Reading This Book</button></div>}
+               <button onClick={handleBookSubmit} disabled={isSubmitting}>Start Reading This Book</button></div>}
            </form>)}
         </div>
     )

@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
 import { BrowserRouter } from 'react-router-dom';
-import App from '../App';
-import About from './About';
+// import App from '../App';
+// import About from './About';
 import CompetitionDisplay from './CompetitionDisplay';
 import CompetitionForm from './CompetitionForm';
 import CompetitionSummary from './CompetitionSummary';
@@ -22,14 +22,14 @@ describe('Header', () => {
 	});
 });
 
-// describe('CompetitionDisplay', () => {
-// 	it('should not have any accessibility issues', async () => {
+ describe('CompetitionDisplay', () => {
+ 	it('should not have any accessibility issues', async () => {
         
-// 		const { container } = render(<CompetitionDisplay/>);
-// 		const results = await axe(container);
-// 		expect(results).toHaveNoViolations(); 
-// 	});
-// });
+ 		const { container } = render(<CompetitionDisplay/>);
+ 		const results = await axe(container);
+ 		expect(results).toHaveNoViolations(); 
+ 	});
+ });
 
 describe('PostCard', () => {
 	it('should not have any accessibility issues', async () => {
@@ -97,12 +97,12 @@ describe('Competition Form', () => {
 	});
 });
 
-describe('About', () => {
-	it('should not have any accessibility issues', async () => {
+// describe('About', () => {
+	// it('should not have any accessibility issues', async () => {
         
-		const { container } = render(<About />);
-		const results = await axe(container);
-		expect(results).toHaveNoViolations(); 
-	});
-});
+	// 	const { container } = render(<About />);
+	// 	const results = await axe(container);
+	// 	expect(results).toHaveNoViolations(); 
+	// });
+// });
 
